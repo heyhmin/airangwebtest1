@@ -11,6 +11,11 @@ app.listen(port);
 // 미들웨어 함수를 특정 경로에 등록
 app.use('/api/data', function(req, res) {
     res.json({ greeting: 'Hello World' });
+    asdf
+});
+
+app.use('', function(req, res) {
+    res.json({ greeting: 'Hello World' });
 });
 
 console.log(`server running at http ${port}`);
