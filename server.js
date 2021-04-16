@@ -9,10 +9,10 @@ const db = require("./app/models");
 const app = express();
 
 //view 폴더(build 복사)
-const viewPath = __dirname + '/app/views/';
+const viewPath = __dirname + '/app/views/static';
 app.use(express.static(viewPath));
 app.get('/', function (req,res) {
-  res.sendFile(path + "index.html");
+  res.sendFile(viewPath + "index.html");
 });
 
 var corsOptions = {
