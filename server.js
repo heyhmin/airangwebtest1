@@ -42,10 +42,12 @@ sequelize.sync();
 // db.sequelize.sync();
 // development
 const Role = db.role;
+const User = db.user;
+var bcrypt = require("bcryptjs");
 
 db.sequelize.sync({force: true}).then(() => {
   // force: true will drop the table if it already exists
-  console.log('Drop and Resync Db');
+  console.log('********** Drop and Resync Db **********');
   initial();
 });
 
@@ -79,6 +81,19 @@ function initial() {
   Role.create({
     id: 3,
     name: "admin"
+  });
+  console.log('********** Create Role done. Now create admin ...');
+  User.create({
+    username: "admin",
+    email: "admin@airang.com",
+    password: bcrypt.hashSync("password", 8)
+  }).then(user => {
+    user.setRoles([1]);
+    user.setRoles([2]);
+    user.setRoles([3]);
+    console.log('********** admin set roles');
+  }).catch(err => {
+    console.log('********** admin error at server.js');
   });
 }
 /*
