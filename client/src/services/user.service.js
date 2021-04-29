@@ -7,7 +7,7 @@ const API_URL = '${process.env.API_URL}/';
 
 class UserService {
   getPublicContent() {
-    return axios.get(API_URL + 'all');
+    return axios.get(API_URL + '/all'); // all
   }
 
   getUserBoard() {
