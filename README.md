@@ -13,4 +13,6 @@
 
 3. 프로필 편집 기능을 제공하지 않는 상태임 <br><br>
 
+4. services의 ~.service.js const API_URL 수정
+
 참고 : https://bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/
