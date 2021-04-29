@@ -14,6 +14,6 @@
 3. 프로필 편집 기능을 제공하지 않는 상태임 <br><br>
 
 4. services의 ~.service.js const API_URL 수정
-5. https://airang-web-test1.herokuapp.comall/ 에서 뭘 받아오려고 ㅎ는데 이걸 com/api/auth, com/api/test로 바꿔야 할 듯..
+5. https://airang-web-test1.herokuapp.comall/ 에서 뭘 받아오려고 하는데 이걸 com/api/auth, com/api/test로 바꿔야 할 듯..
 
 참고 : https://bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/
