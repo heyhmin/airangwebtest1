@@ -1,8 +1,9 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-//const API_URL = 'http://localhost:8080/api/test/';
-const API_URL = "https://airang-web-test1.herokuapp.com/";
+// const API_URL = 'http://localhost:8080/api/test/';
+// const API_URL = "https://airang-web-test1.herokuapp.com/";
+const API_URL = '${process.env.API_URL}/';
 
 class UserService {
   getPublicContent() {
