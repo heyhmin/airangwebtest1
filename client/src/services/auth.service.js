@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+//const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = "https://airang-web-test1.herokuapp.com";
 
 class AuthService {
   login(username, password) {

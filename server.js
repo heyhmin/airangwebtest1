@@ -9,11 +9,9 @@ const db = require("./app/models");
 const app = express();
 
 //view 폴더(build 복사)
-const viewPath = __dirname + '/app/views/static';
+// const viewPath = __dirname + '/app/views/static';
+const viewPath = __dirname + '/app/views/';
 app.use(express.static(viewPath));
-app.get('/', function (req,res) {
-  res.sendFile(viewPath + "index.html");
-});
 
 var corsOptions = {
   //origin: "http://localhost:8081"
@@ -40,6 +38,11 @@ app.use('/api/data', function(req, res) {
 //연결안됨
 var {sequelize} = require('./app/models/index')
 sequelize.sync();
+
+app.get('/', function (req,res) {
+  res.sendFile(viewPath + "index.html");
+});
+
 // production
 // db.sequelize.sync();
 // development
