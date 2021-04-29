@@ -16,11 +16,12 @@ app.get('/', function (req,res) {
 });
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  //origin: "http://localhost:8081"
+  origin: "https://airang-web-test1.herokuapp.com"
 };
 
-// app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
+// app.use(cors());
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
