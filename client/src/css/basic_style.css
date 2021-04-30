@@ -73,9 +73,9 @@ body {
   position: relative;
 }
 
-.navigator .nav-icon {
+.navigator .nav-icon { /*now_playing 없애고 위치 수정*/
   top: 45%;
-  left: 10%;
+  left: 25%;
   width: 100%;
   position: relative;
   padding: 2%;
@@ -83,9 +83,9 @@ body {
   margin-top: 3%;
 }
 
-.navigator .nav-footer {
+.navigator .nav-footer { /*now_playing 없애고 위치 수정*/
   position: relative;
-  top: 52%;
+  top: 50%;
 }
 
 .navigator .nav-footer .footer-button {

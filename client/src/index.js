@@ -10,11 +10,12 @@ import store from "./store";
 import Navigator from "./components/Navigator"
 import SongProjectName from "./components/song.projectName"
 import SongSelect from "./components/song.select"
+import SongScore from "./components/song.score"
 
 ReactDOM.render(
   <HashRouter>
     <Navigator />
-    <SongSelect />
+    <SongScore />
   </HashRouter>,
   document.getElementById("root")
 );

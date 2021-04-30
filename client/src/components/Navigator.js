@@ -36,9 +36,11 @@ class Navigator extends Component {
             <div className="profile_playing">
               <img className="profile_img" src={profile_img} />
             </div>
+            {/* 구현 못하지 않을까요ㅠㅠ
             <div className="now_playing">
               NOW PLAYING - " 별과 고양이 "
             </div>
+            */}
             <div className="nav-icon">
               <img src={profile_icon} align="absmiddle" /> &nbsp;&nbsp;&nbsp;&nbsp;내 프로필
             </div>
