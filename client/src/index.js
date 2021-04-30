@@ -9,11 +9,12 @@ import { Provider } from "react-redux";
 import store from "./store";
 import Navigator from "./components/Navigator"
 import SongProjectName from "./components/song.projectName"
+import SongSelect from "./components/song.select"
 
 ReactDOM.render(
   <HashRouter>
     <Navigator />
-    <SongProjectName />
+    <SongSelect />
   </HashRouter>,
   document.getElementById("root")
 );
