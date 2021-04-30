@@ -7,9 +7,11 @@ import * as serviceWorker from "./serviceWorker";
 
 import { Provider } from "react-redux";
 import store from "./store";
+import Navigator from "./components/Navigator"
 
 ReactDOM.render(
   <HashRouter>
+    <Navigator />
     <Provider store={store}>
       <App />
     </Provider>
