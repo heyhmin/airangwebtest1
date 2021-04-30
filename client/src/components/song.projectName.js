@@ -18,13 +18,12 @@ class SongProjectName extends Component {
           <div className="upper_bar">
             <input type="button" className="img-button" />
           </div>
-      
+
           <div className="info">
             <h1>동요 생성</h1>
             <h3>프로젝트 이름</h3>
           </div>
 
-          {/* 악보 & 가사 파트*/}
           <section className="center smallWidth">
             <h1>프로젝트 이름을 설정해주세요.</h1>
             <form action="">
