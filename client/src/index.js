@@ -8,16 +8,19 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./store";
 import Navigator from "./components/Navigator"
+import SongProjectName from "./components/song.projectName"
 
 ReactDOM.render(
   <HashRouter>
     <Navigator />
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <SongProjectName />
   </HashRouter>,
   document.getElementById("root")
 );
+
+// <Provider store={store}>
+//   <App />
+// </Provider>
 
 // If you want your app to work offline and load faster, you can chađinge
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -3,7 +3,6 @@ import { Link } from "react-router";
 
 //css
 import '../css/basic_style.css';
-import '../css/style_alpha.css';
 
 //img
 import setting_icon from '../css/setting_icon.svg';
