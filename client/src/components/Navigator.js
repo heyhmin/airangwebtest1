@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router";
 
 //css
-import '../css/basic_style.css';
+import '../css/basic_style1.css';
 
 //img
 import setting_icon from '../css/setting_icon.svg';
