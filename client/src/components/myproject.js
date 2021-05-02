@@ -14,6 +14,19 @@ import play from '../css/play.svg'
 import push from '../css/push.svg'
 import score from '../css/score.svg'
 
+//music
+import music1 from '../css/music.mp3';
+
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+
+const Player = ({file}) => (
+    <AudioPlayer
+      src = {file}
+      onPlay={e => console.log("onPlay")}
+    />
+  );
+
 class MyProject extends Component {
     render() {
         return (
@@ -27,6 +40,13 @@ class MyProject extends Component {
                         <div className="song_title">
                             별과 고양이를 민은영님이 추가하셨습니다
                         </div>
+                        <div className="row">
+              <div className="radio">
+              </div>
+              <div className="column">
+                  <Player file = {music1} />
+              </div>
+            </div>
                         <span className="icon_block">
                             <img className="play_icon" src={play} align="middle"/>재생하기&nbsp;&nbsp;&nbsp;&nbsp;
                             <img className="push_icon" src={push} align="middle"/>플레이리스트에담기&nbsp;&nbsp;
