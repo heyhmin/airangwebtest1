@@ -134,12 +134,11 @@ body {
 
 .myproject .body_content .list_block {
   margin-top: 5%;
-  width: 100%;
+  width: 110%;
   position: relative;
   padding: 3%;
   background: rgba(0, 0, 0, 0.048);
   border-radius: 3%;
-  align-items: center;
   font-size: 13px;
 }
 
@@ -147,13 +146,15 @@ body {
   margin-bottom: 1%;
 }
 
-.body_content .list_block .track .audio {
-  width: 50%;
-  margin-top: 1%;
+.myproject .body_content .list_block .row {
+  width: 63%;
+  margin-top: -1%;
 }
 
 .body_content .list_block .icon_block {
-  margin-left: 47%;
+  position: absolute;
+  bottom: 25%;
+  margin-left: 52%;
 }
 
 .myprofile {
