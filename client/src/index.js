@@ -13,11 +13,11 @@ import SongSelect from "./components/song.select"
 import SongScore from "./components/song.score"
 import Join from "./components/join"
 import Login from "./components/login"
+import MainAIrang from "./components/main.airang"
 
 ReactDOM.render(
   <HashRouter>
-    <Navigator />
-    <SongScore />
+    <MainAIrang />
   </HashRouter>,
   document.getElementById("root")
 );
