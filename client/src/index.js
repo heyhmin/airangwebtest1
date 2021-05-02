@@ -11,6 +11,8 @@ import Navigator from "./components/Navigator"
 import SongProjectName from "./components/song.projectName"
 import SongSelect from "./components/song.select"
 import SongScore from "./components/song.score"
+import Join from "./components/join"
+import Login from "./components/login"
 
 ReactDOM.render(
   <HashRouter>
