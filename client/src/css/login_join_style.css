@@ -26,6 +26,30 @@ body::before {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
+.main-form {
+  position: relative;
+  z-index: 2;
+}
+.main-form h1 {
+  font-size: 130px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.main-form h2 {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 80px;
+}
+.main-form .main-caption {
+  font-size: 20px;
+  color: rgb(209, 206, 206);
+  margin-top: 50px;
+  text-align: center;
+  margin: 5%;
+}
+
 .login-form {
   position: relative;
   z-index: 2;
