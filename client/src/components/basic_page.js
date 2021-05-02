@@ -18,7 +18,7 @@ import score from '../css/score.svg'
 import music1 from '../css/music.mp3';
 
 import AudioPlayer from 'react-h5-audio-player';
-import 'react-h5-audio-player/lib/styles.css';
+import '../css/audio_style.scss';
 
 const Player = ({file}) => (
     <AudioPlayer
