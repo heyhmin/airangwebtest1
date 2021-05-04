@@ -35,7 +35,6 @@ class LyricConfirm extends Component {
           </Switch>
       </div>*/
       <div className="tempContainer vertical">
-        <Navigator/>
           <div className="upper_bar">
             <input type="button" className="img-button" />
           </div>

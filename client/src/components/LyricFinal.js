@@ -1,3 +1,4 @@
+//client/src/components/App.js
 import React, { Component } from 'react';
 import { Router, Route, Switch } from "react-router";
 
@@ -47,17 +48,11 @@ class LyricFinal extends Component {
     this.state = {
     }
 }
+
   componentDidMount() {}
   render () {
     return (
-      /*<div className="App">
-          <Switch>
-            <Route exact path='/' component={Api_test} /> // root 경로일 경우 라우팅
-            <Route path='/Api_test' component={Api_test} />
-          </Switch>
-      </div>*/
       <div className="tempContainer vertical">
-        <Navigator/>
           <div className="upper_bar">
             <input type="button" className="img-button" />
           </div>
@@ -74,7 +69,7 @@ class LyricFinal extends Component {
               <h1>제목</h1>
               <form action="">
               <div className="int-area bgWhite">
-                  <input type="text" name-="songTitle" id="songTitle" autocomplete="off" required/>
+                  <input type="text" style = {{color:"#2e2e2e"}}name-="songTitle" id="songTitle" autocomplete="off" required/>
                   <label for="id">필수</label>
                 </div>
               </form>
