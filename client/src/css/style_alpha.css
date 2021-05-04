@@ -7,11 +7,12 @@
   padding: 0;
   justify-content: space-between;
   align-items: center;
-  height: 90vh;
-  width: 208vh;
+  /*height & width 조절*/
+  height: 96.5vh; /*90vh*/
+  width: 192vh; /*208vh*/
 }
 
-tempContainer::before {
+.tempContainer::before {
   content: "";
   position: absolute;
   z-index: 0;
