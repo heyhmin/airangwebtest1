@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Router, Route, Switch } from "react-router";
 
 import Api_test from '../Api_test'
-
-/*Api_test 경로로 유입된 호출은 Api_test.js로 이동시킴*/ 
+/*Api_test 경로로 유입된 호출은 Api_test.js로 이동시킴*/
 
 //css
 //import '../css/basic_style.css';
@@ -17,11 +16,10 @@ import playBtn from '../css/playBtn.svg';
 import playBtn2 from '../css/playBtn2.svg';
 import score_img from '../css/score_img.png';
 
-
 class LyricConfirm extends Component {
   constructor (props) {
     super(props);
-    
+
     this.state = {
     }
 }
@@ -41,7 +39,7 @@ class LyricConfirm extends Component {
           <div className="info">
             <h1>가사 생성</h1>
           </div>
-          
+
           {/* 악보 & 가사 파트*/}
           <section className="center lyricWhite">
             <div className="score">

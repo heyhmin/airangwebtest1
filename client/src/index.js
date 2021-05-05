@@ -8,16 +8,12 @@ import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import store from "./store";
 import Navigator from "./components/Navigator"
-import SongProjectName from "./components/song.projectName"
-import SongSelect from "./components/song.select"
-import SongScore from "./components/song.score"
-import Join from "./components/join"
-import Login from "./components/login"
-import MainAIrang from "./components/main.airang"
+import LyricConfirm from "./components/LyricConfirm"
 
 ReactDOM.render(
   <HashRouter>
-    <MainAIrang />
+    <Navigator/>
+    <LyricConfirm/>
   </HashRouter>,
   document.getElementById("root")
 );
