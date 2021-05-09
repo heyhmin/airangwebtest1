@@ -1,4 +1,3 @@
-import React from 'react';
 const theme = '어린이들이 좋아하는 동요 베스트 100곡\n\n';
 const prompts = [
   "input: 봄볕\noutput: 파란잔디가 핀 봄언덕에 봄볕이 딩군다 잔디를 사르르 쓰다듬어 내리는 바람\n\ninput: 봄비\noutput: 봄비는 소곤소곤 노래하며 내려와 예쁜 꽃잎 피우고 새싹 돋게 하지요\n\ninput: 봄바람\noutput: 봄바람이 살랑살랑 부는 아침에 하얀 꽃망울이 송이송이 맺혔어요\n\ninput: 봄빛\noutput: ",
