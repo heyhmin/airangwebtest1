@@ -26,7 +26,7 @@ const openai = new OpenAI(OPENAI_API_KEY);
       console.log(gptResponse.data['choices'][0]['text']);
       console.log("Number of tokens for string:" + gptResponse.data['choices'][0]['text'].length);
       // destination.txt will be created or overwritten by default.
-      fs.writeFile(`./app/openai/lyricResult/Lyric_${getDateString()}.txt`, gptResponse.data['choices'][0]['text'], (err) => {
+      fs.writeFile(`./app/openai/lyricResult/Lyric_${getDateString()}.txt`, selectedPrompts()+gptResponse.data['choices'][0]['text'], (err) => {
         if (err) throw err;
         console.log(`created lyric file at this timestamp ${getDateString()}`);
       });
@@ -47,6 +47,9 @@ function getDateString() {
   return `${year}${month}${day}${hour}${min}${sec}`
 }
 
+// 결과 text 처리 - input/output/: 제거
+
+// node이므로 res.send 적용이 필요할 것 같음.
 export default function createdLyrics() {
   return (
     gptResponse.data['choices'][0]['text']

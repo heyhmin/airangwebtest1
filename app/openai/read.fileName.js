@@ -21,4 +21,5 @@ fs.readdir(directoryPath, function (err, files) {
 
 // myproject에서는 allFileName, 가사생성에서는 recentFileName
 // 잘 안되면 파일 이름, 내용 같이 exports해서 그냥 한번에 보여주기.
+// node이므로 res.send 적용이 필요할 것 같음.
 module.exports = { recentFileName, allFileName }
