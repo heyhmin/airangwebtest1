@@ -1,4 +1,4 @@
-const theme = '어린이들이 좋아하는 동요 베스트 100곡\n\n';
+const theme = '어린이들이 좋아하는 동요 베스트 가사\n\n';
 const prompts = [
   "input: 봄볕\noutput: 파란잔디가 핀 봄언덕에 봄볕이 딩군다 잔디를 사르르 쓰다듬어 내리는 바람\n\ninput: 봄비\noutput: 봄비는 소곤소곤 노래하며 내려와 예쁜 꽃잎 피우고 새싹 돋게 하지요\n\ninput: 봄바람\noutput: 봄바람이 살랑살랑 부는 아침에 하얀 꽃망울이 송이송이 맺혔어요\n\ninput: 봄빛\noutput: ",
   "input: 해님\noutput: 어서 일어나세요 방긋 웃는 웃음쟁이 해님 엄마 아빠도 일어나세요 해님이 인사해요 기지개를 쭉쭉 켜요 쑥쑥 자라는 우리들 행복한 아침 인사해요\n\ninput: 햇살\noutput: 아침 햇살이 찾아들면 가슴을 펴고 햇살을 흔들며 노래하는 나무 오늘은 날씨가 좋아요 햇살이 눈부셔요\n\ninput: 햇빛\noutput: ",
@@ -33,6 +33,6 @@ function getRandom() {
 
 export default function selectedPrompts() {
   return (
-    prompts[getRandom()]
+    theme + prompts[getRandom()]
   );
 }

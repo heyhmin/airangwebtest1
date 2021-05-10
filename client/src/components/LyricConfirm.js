@@ -37,7 +37,7 @@ class LyricConfirm extends Component {
 
   componentDidMount() {
     UserService.getPublicContent().then(
-      /*
+      ///*
       response => {
         this.setState({
           title: response.data.title,
@@ -54,7 +54,8 @@ class LyricConfirm extends Component {
         });
       }
       // recentLyric : 1 object, not object arr
-      */
+      //*/
+      /*
       // allLyric : more than 2 object, object arr
       data => {
         this.setState({
@@ -68,6 +69,7 @@ class LyricConfirm extends Component {
           loading: true
         });
       }
+      */
     );
   }
   render () {
@@ -110,7 +112,7 @@ class LyricConfirm extends Component {
                 }
               </ul>
               <p>선생님이 우리를 기다리신다</p>
-              <p>{this.state.title}</p> {/*recentLyric은 잘 동작함*/}
+              <p>{this.state.content}</p> {/*recentLyric은 잘 동작함*/}
               <p>학교 종이 땡땡땡 어서 모이자</p>
             </div>
           </section>

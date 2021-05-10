@@ -1,3 +1,4 @@
+const fs = require('fs');
 // prompt
 import selectedPrompts from './prompt.js'
 //var selectedPrompts = require('./prompt')
@@ -25,17 +26,20 @@ const openai = new OpenAI(OPENAI_API_KEY);
     openai.encode(gptResponse).then((result) => {
       console.log(gptResponse.data['choices'][0]['text']);
       console.log("Number of tokens for string:" + gptResponse.data['choices'][0]['text'].length);
+      // text replacing
+      const reg = /input: .*\noutput: /gi
+      const reg2 = /\n\n/gi
+      var replaced = gptResponse.data['choices'][0]['text'].replace(reg, '');
+      var replaced2 = replaced.replace(reg2, '\n')
       // destination.txt will be created or overwritten by default.
-      fs.writeFile(`./app/openai/lyricResult/Lyric_${getDateString()}.txt`, selectedPrompts()+gptResponse.data['choices'][0]['text'], (err) => {
+      fs.writeFile(`./app/openai/lyricResult/Lyric_${getDateString()}.txt`, replaced2, (err) => {
         if (err) throw err;
         console.log(`created lyric file at this timestamp ${getDateString()}`);
       });
     });
 })();
 
-// file create
-const fs = require('fs');
-
+// file name
 function getDateString() {
   const date = new Date();
   const year = date.getFullYear();
