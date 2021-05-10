@@ -14,8 +14,8 @@ const viewPath = __dirname + '/app/views/';
 app.use(express.static(viewPath));
 
 var corsOptions = {
-  //origin: "http://localhost:8081"
-  origin: "https://airang-web-test1.herokuapp.com"
+  origin: "http://localhost:8081"
+  //origin: "https://airang-web-test1.herokuapp.com"
 };
 
 app.use(cors(corsOptions));

@@ -16,14 +16,60 @@ import playBtn from '../css/playBtn.svg';
 import playBtn2 from '../css/playBtn2.svg';
 import score_img from '../css/score_img.png';
 
+// server data - lyric test
+import UserService from "../services/user.service";
+
 class LyricConfirm extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
 
     this.state = {
-    }
-}
-  componentDidMount() {}
+      /*
+      // recentLyric : 1 object
+      title: "",
+      content: ""
+      */
+      // allLyric : more than 2 objects
+      list: [],
+      loading: true
+    };
+  }
+
+  componentDidMount() {
+    UserService.getPublicContent().then(
+      /*
+      response => {
+        this.setState({
+          title: response.data.title,
+          content: response.data.content
+        });
+      },
+      error => {
+        this.setState({
+          title: error.response.data.title,
+          content:
+            (error.response && error.response.data.content) ||
+            error.message ||
+            error.toString()
+        });
+      }
+      // recentLyric : 1 object, not object arr
+      */
+      // allLyric : more than 2 object, object arr
+      data => {
+        this.setState({
+          list: data.data,
+          loading: false
+        });
+      },
+      error => {
+        console.error(error);
+        this.setState({
+          loading: true
+        });
+      }
+    );
+  }
   render () {
     return (
       /*<div className="App">
@@ -49,8 +95,22 @@ class LyricConfirm extends Component {
               <h2>가사</h2>
               <br />
               <p>사이좋게 오늘도 공부 잘하자</p>
+              <p>{this.state.title}</p> {/*recentLyric은 잘 동작함*/}
               <p>학교 종이 땡땡땡 어서 모이자</p>
+              <ul>
+                {/*allLyric*/
+                  this.state.list.map((e) => {
+                    return(
+                      <li>
+                        <p>{e.title}</p>
+                        <p>{e.content}</p>
+                      </li>
+                    );
+                  })
+                }
+              </ul>
               <p>선생님이 우리를 기다리신다</p>
+              <p>{this.state.title}</p> {/*recentLyric은 잘 동작함*/}
               <p>학교 종이 땡땡땡 어서 모이자</p>
             </div>
           </section>
