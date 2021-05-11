@@ -13,7 +13,7 @@ module.exports = function(app) {
 
   // app.get("/api/test/all", controller.allAccess);
   app.get("/api/test/all", function(req, res){
-    res.send(recentLyric);
+    res.send(allLyric);
   });
 
   app.get(

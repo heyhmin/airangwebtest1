@@ -18,7 +18,7 @@ const openai = new OpenAI(OPENAI_API_KEY);
     const gptResponse = await openai.complete({
         engine: 'davinci',
         prompt: selectedPrompts(),
-        maxTokens: 5, // 작곡 step 수를 받아오는 기능이 필요함. step / 5 * 3 = max_tokens
+        maxTokens: getRandomMaxTokens(),
         temperature: 0.5,
         frequencyPenalty: 0.2
     });
@@ -29,10 +29,12 @@ const openai = new OpenAI(OPENAI_API_KEY);
       // text replacing
       const reg = /input: .*\noutput: /gi
       const reg2 = /\n\n/gi
+      const reg3 = /i.*/gi
       var replaced = gptResponse.data['choices'][0]['text'].replace(reg, '');
       var replaced2 = replaced.replace(reg2, '\n')
+      var replaced3 = replaced2.replace(reg3, '')
       // destination.txt will be created or overwritten by default.
-      fs.writeFile(`./app/openai/lyricResult/Lyric_${getDateString()}.txt`, replaced2, (err) => {
+      fs.writeFile(`./app/openai/lyricResult/Lyric_${getDateString()}.txt`, replaced3, (err) => {
         if (err) throw err;
         console.log(`created lyric file at this timestamp ${getDateString()}`);
       });
@@ -49,6 +51,11 @@ function getDateString() {
   const min = `${date.getMinutes()}`.padStart(2, '0');
   const sec = `${date.getSeconds()}`.padStart(2, '0');
   return `${year}${month}${day}${hour}${min}${sec}`
+}
+
+// maxTokens
+function getRandomMaxTokens() {
+  return 180 + Math.floor(Math.random() * 20);
 }
 
 // 결과 text 처리 - input/output/: 제거

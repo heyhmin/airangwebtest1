@@ -37,7 +37,7 @@ class LyricConfirm extends Component {
 
   componentDidMount() {
     UserService.getPublicContent().then(
-      ///*
+      /*
       response => {
         this.setState({
           title: response.data.title,
@@ -54,12 +54,12 @@ class LyricConfirm extends Component {
         });
       }
       // recentLyric : 1 object, not object arr
+      */
       //*/
-      /*
       // allLyric : more than 2 object, object arr
-      data => {
+      response => {
         this.setState({
-          list: data.data,
+          list: response.data,
           loading: false
         });
       },
@@ -69,7 +69,7 @@ class LyricConfirm extends Component {
           loading: true
         });
       }
-      */
+      //*/
     );
   }
   render () {
