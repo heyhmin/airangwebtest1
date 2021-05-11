@@ -166,6 +166,7 @@ audio {
   width: 70px;
   height: 55px;
   cursor: pointer;
+  z-index:auto;
 }
 
 .center {
@@ -223,6 +224,7 @@ audio {
 .confirm-button {
   margin-left: 60%;
   margin-bottom: auto;
+  z-index:5;
 }
 
 .confirm-button button {
