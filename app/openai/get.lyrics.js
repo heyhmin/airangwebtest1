@@ -55,7 +55,7 @@ function getDateString() {
 
 // maxTokens
 function getRandomMaxTokens() {
-  return 180 + Math.floor(Math.random() * 20);
+  return 180 + Math.floor(Math.random() * 40);
 }
 
 // 결과 text 처리 - input/output/: 제거
