@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from "react-router";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom';
 
 import Api_test from '../Api_test'
 
@@ -12,6 +18,8 @@ import '../css/style_alpha.css';
 import playBtn from '../css/playBtn.svg';
 import score_img from '../css/score_img.png';
 
+//Nav
+import Navigator from './Navigator';
 
 class LyricMaking extends Component {
   
@@ -19,6 +27,7 @@ class LyricMaking extends Component {
   render () {
     return (
       <div className="tempContainer vertical">
+        <Navigator/>
           <div className="upper_bar">
             <input type="button" className="img-button" />
           </div>
@@ -40,11 +49,13 @@ class LyricMaking extends Component {
             </div>
           </section>
           <div className="confirm-button">
+            <Link to ="./LyricConfirm">
             <button id="btn" type="submit"><img className="nextBtn" src={playBtn} />작사하기</button>
+            </Link>
           </div>
         </div>
     );
   }
 }
 
-export default LyricMaking;
+export default withRouter(LyricMaking);

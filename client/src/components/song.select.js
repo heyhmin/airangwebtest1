@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from "react-router";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom';
 import Api_test from '../Api_test'
 
 /*Api_test 경로로 유입된 호출은 Api_test.js로 이동시킴*/
@@ -19,6 +24,10 @@ import music3 from '../css/music.mp3';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 
+//Nav
+import Navigator from '../components/Navigator';
+
+
 const Player = ({file}) => (
   <AudioPlayer
     src = {file}
@@ -30,6 +39,7 @@ class SongSelect extends Component {
   render () {
     return (
       <div className="tempContainer vertical">
+        <Navigator />
           <div className="upper_bar">
             <input type="button" className="img-button" />
           </div>
@@ -67,11 +77,13 @@ class SongSelect extends Component {
             </div>
           </section>
         <div className="confirm-button">
+          <Link to = "./song.score">
           <button id="btn" type="submit"><img class="nextBtn" src={playBtn}/>다음</button>
+          </Link>
         </div>
       </div>
     );
   }
 }
 
-export default SongSelect;
+export default withRouter(SongSelect);

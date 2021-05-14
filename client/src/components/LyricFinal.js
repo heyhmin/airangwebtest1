@@ -1,6 +1,12 @@
 //client/src/components/App.js
 import React, { Component } from 'react';
-import { Router, Route, Switch } from "react-router";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom';
 
 import Api_test from '../Api_test'
 
@@ -14,8 +20,7 @@ import '../css/style_alpha.css';
 import Navigator from './Navigator';
 
 //img
-import playBtn from '../css/playBtn.png';
-import playBtn2 from '../css/playBtn2.svg';
+import playBtn from '../css/playBtn.svg';
 import score_img from '../css/score_img.png';
 
 /*
@@ -53,6 +58,7 @@ class LyricFinal extends Component {
   render () {
     return (
       <div className="tempContainer vertical">
+        <Navigator />
           <div className="upper_bar">
             <input type="button" className="img-button" />
           </div>
@@ -83,7 +89,9 @@ class LyricFinal extends Component {
               </form>
             </div>
             <div className="confirm-button final_confirm">
+              <Link to = './myproject'>
                 <button id="btn" type="submit"><img class="nextBtn" src={playBtn}/>완료</button>
+                </Link>
             </div>
         </section>
         </div>
@@ -92,4 +100,4 @@ class LyricFinal extends Component {
   }
 }
 
-export default LyricFinal;
+export default withRouter(LyricFinal);

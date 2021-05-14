@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from "react-router";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom';
 
 import Api_test from '../Api_test'
 /*Api_test 경로로 유입된 호출은 Api_test.js로 이동시킴*/
@@ -10,11 +16,17 @@ import '../css/style_alpha.css';
 //img
 import playBtn from '../css/playBtn.svg';
 
+//Nav
+import Navigator from '../components/Navigator';
 
 class SongProjectName extends Component {
+  goToNext = () => {
+    this.props.history.push('./song.select');
+  }
   render () {
     return (
       <div className="tempContainer vertical">
+        <Navigator />
           <div className="upper_bar">
             <input type="button" className="img-button" />
           </div>
@@ -34,11 +46,13 @@ class SongProjectName extends Component {
             </form>
           </section>
           <div className="confirm-button">
+            <Link to ="./song.select">
               <button id="btn" type="submit"><img class="nextBtn" src={playBtn}/>다음</button>
+            </Link>
           </div>
         </div>
     );
   }
 }
 
-export default SongProjectName;
+export default withRouter(SongProjectName);

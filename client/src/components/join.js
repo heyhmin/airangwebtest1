@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from "react-router";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom';
 import Api_test from '../Api_test'
 
 /*Api_test 경로로 유입된 호출은 Api_test.js로 이동시킴*/
@@ -11,8 +16,13 @@ import '../css/login_join_style.css';
 
 
 class Join extends Component {
+  goToLogin = () => {
+    this.props.history.push('./login');
+    /**/ 
+  }
   render () {
     return (
+      <div className="logincomponent">
         <section className="join-form">
         <h1>AIRANG</h1>
         <h2>Create Your Account</h2>
@@ -30,15 +40,16 @@ class Join extends Component {
             <label htmlFor="pw">Password ( 8~15자 이내 )</label>
           </div>
           <div className="btn-area">
-            <button id="btn1" type="submit">JOIN</button>
+            <button id="btn1" type="submit" onClick={this.goToLogin}>JOIN</button>
           </div>
         </form>
         <div className="caption">
           <a href>Go to Login</a>
         </div>
       </section>
+      </div>
     );
   }
 }
 
-export default Join;
+export default withRouter(Join);

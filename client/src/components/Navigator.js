@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from "react-router";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom';
 //css
 import '../css/basic_style1.css';
 
@@ -18,6 +23,9 @@ class Navigator extends Component {
     this.state = {
     }
 }
+  Logout = () => {
+    this.props.history.push('/');  
+  }
 
   render () {
 
@@ -42,16 +50,16 @@ class Navigator extends Component {
             </div>
             */}
             <div className="nav-icon">
-              <img src={profile_icon} align="absmiddle" /> &nbsp;&nbsp;&nbsp;&nbsp;내 프로필
+              <img src={profile_icon} align="absmiddle" /> &nbsp;&nbsp;&nbsp;&nbsp;<Link to = "./myprofile">내 프로필</Link>
             </div>
             <div className="nav-icon">
-              <img src={project_icon} align="absmiddle" />&nbsp;&nbsp;&nbsp;&nbsp; 내 프로젝트
+              <img src={project_icon} align="absmiddle" />&nbsp;&nbsp;&nbsp;&nbsp; <Link to = "./myproject">내 프로젝트</Link>
             </div>
             <div className="nav-icon">
               <img src={setting_icon} align="absmiddle" />&nbsp;&nbsp;&nbsp;&nbsp; 도움말
             </div>
             <div className="nav-footer">
-              <button className="footer-button" type="button">로그아웃</button>
+              <button className="footer-button" type="button" onClick={this.Logout}>로그아웃</button>
             </div>
           </div>
       </div>
@@ -59,4 +67,4 @@ class Navigator extends Component {
   }
 }
 
-export default Navigator;
+export default withRouter(Navigator);

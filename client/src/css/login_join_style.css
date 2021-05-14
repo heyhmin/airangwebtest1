@@ -5,17 +5,19 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+.logincomponent {
   font-family: "Noto Sans KR", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  /*임시로 이렇게 해둠*/
+  width:180vh;
   background: url("background.png") no-repeat center;
   background-size: cover;
 }
 
-body::before {
+.logincomponent::before {
   content: "";
   position: absolute;
   z-index: 1;

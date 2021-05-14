@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from "react-router";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  withRouter
+} from 'react-router-dom';
 
 import Api_test from '../Api_test'
 /*Api_test 경로로 유입된 호출은 Api_test.js로 이동시킴*/
@@ -81,6 +87,7 @@ class LyricConfirm extends Component {
           </Switch>
       </div>*/
       <div className="tempContainer vertical">
+          <Navigator />
           <div className="upper_bar">
             <input type="button" className="img-button" />
           </div>
@@ -117,12 +124,16 @@ class LyricConfirm extends Component {
             </div>
           </section>
           <div className="confirm-button">
+          <Link to = './LyricMaking'>
             <button class="re" type="submit"><img className="nextBtn" src={playBtn2} />다시 작사하기</button>
+            </Link>
+            <Link to = './LyricFinal'>
             <button id="btn" type="submit"><img className="nextBtn" src={playBtn} />다음</button>
+            </Link>
           </div>
         </div>
     );
   }
 }
 
-export default LyricConfirm;
+export default withRouter(LyricConfirm);

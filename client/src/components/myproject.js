@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Router, Route, Switch } from "react-router";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+  } from 'react-router-dom';
+
 
 import Api_test from '../Api_test'
 
@@ -15,6 +22,8 @@ import push from '../css/push.svg'
 import newproject from '../css/newproject.svg'
 import score from '../css/score.svg'
 
+//Nav
+import Navigator from '../components/Navigator';
 //music
 import music1 from '../css/music.mp3';
 
@@ -32,7 +41,9 @@ const Player = ({file}) => (
 class MyProject extends Component {
     render() {
         return (
+            
             <div className="myproject">
+                <Navigator />
                 <div className="body_content">
                     <div className="search-box">
                         <input className="search-text" type="text" placeholder="search for ?" />
@@ -40,7 +51,9 @@ class MyProject extends Component {
                     </div>
 
                     <div className="list_block_1">
+                        <Link to = "./song.projectName">
                     <img className="newproject" src={newproject}></img>새 프로젝트 생성하기
+                    </Link>
                     </div>
 
                     <div className="list_block">
@@ -271,4 +284,4 @@ class MyProject extends Component {
     }
 }
 
-export default MyProject;
+export default withRouter(MyProject);
